@@ -10,13 +10,11 @@ public class Lluitador
         this.nom = tNom;
         this.empats = tEmpats;
     }
-
     public Lluitador(string nom)
     {
         this.nom = nom;
         this.empats = 0;
     }
-
     public string GetNom()
     {
         return nom;

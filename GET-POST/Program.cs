@@ -18,17 +18,17 @@ namespace WAFTemplate
             };
             
             Random rand = new Random();
-            int empats = 0;
+            var empates = new Program();
             
             while (true)
             {
-                Console.WriteLine("------------------Lista de luchadores:------------------------------");
+                Console.WriteLine("------------------Lista de luchadores Actuales:------------------------------");
                 lluitadors.ToList().ForEach(lluitador => Console.WriteLine(lluitador));
                 string lluitador1 = lluitadors[rand.Next(0, lluitadors.Count)];
                 string lluitador2 = lluitadors[rand.Next(0, lluitadors.Count)];
-                
-                if (lluitador1 == lluitador2) break;
 
+                if (lluitador1 == lluitador2) continue;
+                
                 Resultat resultat = new();
                 using (var client = new HttpClient())
                 {
@@ -41,49 +41,50 @@ namespace WAFTemplate
                 Console.WriteLine("PERD   --->" + resultat.perd);
                 
                 lluitadors.Remove(resultat.perd);
+                
                 if (lluitadors.Count == 1)
                 {
-                    lluitadors.ForEach(x => Console.WriteLine(x));
+                    Console.WriteLine("El ganador es: " + lluitadors[0]);
                     return;
                 }
-
-                if (lluitadors.Count == 2)
+                else if (lluitadors.Count == 2)
                 {
-                    if (resultat.guanya == resultat.perd)
-                    {
-                        if (empats == 2) return;
-                        empats++;
-                    }
-                }
-                else if (lluitadors.Count > 2)
-                {
-                    // Al menos un empate                    
+                    await empates.SistemaDeEmpates();
+                    return;
                 }
             }
         }
-
-        // Los ultimos cambios son sobre el empate, dejo un comentario en cada uno, la siguiente version tendra la modificacion.
-        
-        private async Task Program2()
+        private async Task SistemaDeEmpates()
         {
             List<Lluitador> lluitadors = await GetList();
+            int empats = 0;
+    
             while (true)
             {
                 Resultat res = await SimulateBattle(lluitadors);
-                ProcessResult(lluitadors, res);
-                if (DosJugadorsIEmpats(lluitadors))
+                await ProcessResult(lluitadors, res);
+        
+                if (DosJugadorsIEmpats(lluitadors, res, ref empats))
                 {
-                    // Ganan los dos
+                    if (empats >= 2)
+                    {
+                        Console.WriteLine("Ganadores: " + res.guanya + " y " + res.perd);
+                        return;
+                    }
                 }
-                
+                if (lluitadors.Count == 1)
+                {
+                    Console.WriteLine("El ganador es: " + lluitadors[0].GetNom());
+                    return;
+                }
+        
                 if (MesDeDosITotsEmpat(lluitadors))
                 {
-                    // Todos pierden
+                    Console.WriteLine("No hay ganador");
+                    return;
                 }
-
             }
         }
-
         private async Task<List<Lluitador>> GetList()
         {
             const string url = "http://localhost:8080/Lluitadors";
@@ -101,7 +102,6 @@ namespace WAFTemplate
             lluitadorsNom.ForEach(x => lluitadors.Add(new Lluitador(x)));
             return lluitadors;
         }
-
         private async Task<Resultat> SimulateBattle(List<Lluitador> lluitadors)
         {
             Random rand = new();
@@ -118,20 +118,18 @@ namespace WAFTemplate
 
             return resultat;
         }
-
         private async Task ProcessResult(List<Lluitador> lluitadors, Resultat resultat)
         {
             if (resultat.guanya == resultat.perd) return;
             lluitadors.RemoveAt(lluitadors.FindIndex(x => x.GetNom() == resultat.perd));
         }
-
-        private bool DosJugadorsIEmpats(List<Lluitador> lluitadors)
+        private bool DosJugadorsIEmpats(List<Lluitador> lluitadors, Resultat resultat, ref int empats)
         {
             return false;
         }
-
         private bool MesDeDosITotsEmpat(List<Lluitador> lluitadors)
         {
             return false;
         }
-    }}
+    }
+}

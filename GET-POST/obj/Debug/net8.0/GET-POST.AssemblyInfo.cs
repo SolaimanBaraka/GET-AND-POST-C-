@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GET-POST")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03040b266e3023fd5aa6a6f288d0392c0bc603f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GET-POST")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GET-POST")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

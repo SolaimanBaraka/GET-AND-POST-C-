@@ -1,0 +1,15 @@
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\bin\Debug\net8.0\GET-POST.exe
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\bin\Debug\net8.0\GET-POST.deps.json
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\bin\Debug\net8.0\GET-POST.runtimeconfig.json
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\bin\Debug\net8.0\GET-POST.dll
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\bin\Debug\net8.0\GET-POST.pdb
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.AssemblyInfoInputs.cache
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.AssemblyInfo.cs
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.csproj.CoreCompileInputs.cache
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.sourcelink.json
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.dll
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\refint\GET-POST.dll
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.pdb
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\GET-POST.genruntimeconfig.cache
+C:\Users\Solaiman Baraka\Desktop\GET-POST\GET-POST\obj\Debug\net8.0\ref\GET-POST.dll
